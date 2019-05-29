@@ -18,7 +18,6 @@
 
 
 
-
 ### kada.163.com: python
 
 1. skulpt
@@ -28,3 +27,9 @@
 ### repl.it: python
 1. [monaco editor](https://microsoft.github.io/monaco-editor/)
 2. [自定义 python language server](https://repl.it/site/blog/intel)
+
+
+### 难点
+1. 怎么处理多个 python package 的文件夹层次？
+2. 采用什么样的 python language server ？
+3. 后端服务器用什么语言开发最快，最容易集成 ？
