@@ -10,7 +10,6 @@
 - [ ] [python sandbox](http://doc.pypy.org/en/latest/sandbox.html)
 
 
-<hr />
 
 ### issues
 
@@ -18,7 +17,6 @@
 
 
 
-<hr />
 
 ### kada.163.com: python
 
