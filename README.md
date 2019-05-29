@@ -7,7 +7,7 @@
 
 - [ ] [skulpt](http://www.skulpt.org/) python语法树转换js，支持turtle编程
 
-- [ ] [python sandbox](http://doc.pypy.org/en/latest/sandbox.html) python基本库
+- [ ] [python sandbox](http://doc.pypy.org/en/latest/sandbox.html) python标准库
 
 
 
