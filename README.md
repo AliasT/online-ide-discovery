@@ -27,6 +27,9 @@
 ### repl.it: python
 1. [monaco editor](https://microsoft.github.io/monaco-editor/)
 2. [自定义 python language server](https://repl.it/site/blog/intel)
+3. [https://github.com/microsoft/monaco-editor/blob/master/docs/integrate-esm.md](https://github.com/microsoft/monaco-editor/blob/master/docs/integrate-esm.md)
+4. [https://github.com/palantir/python-jsonrpc-server](https://github.com/palantir/python-jsonrpc-server)
+5. [https://github.com/palantir/python-language-server](https://github.com/palantir/python-language-server)
 
 
 ### 难点
