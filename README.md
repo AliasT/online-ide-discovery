@@ -26,4 +26,4 @@
 
 ### repl.it: python
 1. [monaco editor](https://microsoft.github.io/monaco-editor/)
-2. [自定义 python language server](https://repl.it/talk/announcements/Replit-Code-Intelligence/4932)
+2. [自定义 python language server](https://repl.it/site/blog/intel)
