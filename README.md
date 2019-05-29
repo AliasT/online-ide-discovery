@@ -1,11 +1,13 @@
 # online-ide-discovery
 
 
-- [ ] python language sever
+- [ ] python language sever : auto complete, go to definition, all references (static analyzie)
 
 
 
 - [ ] [skulpt](http://www.skulpt.org/)
+
+- [ ] [python sandbox](http://doc.pypy.org/en/latest/sandbox.html)
 
 
 
