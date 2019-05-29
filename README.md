@@ -30,6 +30,7 @@
 3. [https://github.com/microsoft/monaco-editor/blob/master/docs/integrate-esm.md](https://github.com/microsoft/monaco-editor/blob/master/docs/integrate-esm.md)
 4. [https://github.com/palantir/python-jsonrpc-server](https://github.com/palantir/python-jsonrpc-server)
 5. [https://github.com/palantir/python-language-server](https://github.com/palantir/python-language-server)
+6. [https://github.com/TypeFox/monaco-languageclient](https://github.com/TypeFox/monaco-languageclient)
 
 
 ### 难点
