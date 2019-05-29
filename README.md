@@ -37,3 +37,21 @@
 1. 怎么处理多个 python package 的文件夹层次？
 2. 采用什么样的 python language server ？
 3. 后端服务器用什么语言开发最快，最容易集成 ？
+
+
+
+### Demo 运行
+
+client
+```shell
+cd client
+yarn 
+yarn build
+yarn start
+```
+server
+```
+python3 main.py
+```
+
+open [localhost:9000](localhost:9000)
