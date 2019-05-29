@@ -9,6 +9,7 @@
 
 - [ ] [python sandbox](http://doc.pypy.org/en/latest/sandbox.html) python标准库
 
+- [ ] [xterm](https://github.com/xtermjs/xterm.js/)
 
 
 ### issues
