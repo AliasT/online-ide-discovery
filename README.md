@@ -1,13 +1,13 @@
 # online-ide-discovery
 
 
-- [ ] python language sever : auto complete, go to definition, all references (static analyzie)
+- [x] python language sever : auto complete, go to definition, all references (static analyzie)
 
 
 
-- [ ] [skulpt](http://www.skulpt.org/)
+- [ ] [skulpt](http://www.skulpt.org/) python语法树转换js，支持turtle编程
 
-- [ ] [python sandbox](http://doc.pypy.org/en/latest/sandbox.html)
+- [ ] [python sandbox](http://doc.pypy.org/en/latest/sandbox.html) python基本库
 
 
 
