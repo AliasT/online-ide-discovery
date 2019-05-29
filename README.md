@@ -54,4 +54,4 @@ server
 python3 main.py
 ```
 
-open [localhost:9000](localhost:9000)
+open [localhost:9000](http://localhost:9000)
