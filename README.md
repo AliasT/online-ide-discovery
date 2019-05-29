@@ -22,3 +22,8 @@
 
 1. skulpt
 2. [ace editor](https://github.com/ajaxorg/ace) + [ace/lib/snippets](https://github.com/ajaxorg/ace/blob/master/lib/ace/snippets/python.snippets)
+
+
+### repl.it: python
+1. [monaco editor](https://microsoft.github.io/monaco-editor/)
+2. [自定义 python language server](https://repl.it/talk/announcements/Replit-Code-Intelligence/4932)
