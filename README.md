@@ -21,7 +21,7 @@
 
 1. [skuplt python 3 support](https://github.com/skulpt/skulpt/issues/777)
 2. [multiple files -> multiple model](https://github.com/Microsoft/monaco-editor/issues/736)
-
+3. [https://github.com/Microsoft/monaco-editor/issues/604](https://github.com/Microsoft/monaco-editor/issues/604)
 
 ### kada.163.com: python
 
