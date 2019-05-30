@@ -44,7 +44,13 @@
 3. 后端服务器用什么语言开发最快，最容易集成 ？
 4. monaco editor 怎么实现多文件的 lsp 交互 ？
 
+### milestone
 
+- [x] 单个文件lsp
+- [ ] 多文件lsp
+- [ ] 服务器文件执行
+- [ ] terminal
+- [ ] 用户权限
 
 ### Demo 运行
 
