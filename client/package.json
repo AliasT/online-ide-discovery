@@ -3,12 +3,14 @@
   "name": "@monaco-languageclient/example",
   "version": "0.0.1",
   "dependencies": {
+    "core-js": "2",
     "express": "^4.15.2",
     "monaco-editor": "0.14.3",
     "monaco-editor-webpack-plugin": "^1.7.0",
     "monaco-languageclient": "^0.9.0",
     "normalize-url": "^2.0.1",
     "reconnecting-websocket": "^3.2.2",
+    "regenerator-runtime": "^0.13.2",
     "request-light": "^0.2.2",
     "vscode-json-languageservice": "^3.1.4",
     "vscode-languageserver": "^4.0.0",
@@ -30,13 +32,10 @@
     "webpack-merge": "^4.1.2"
   },
   "scripts": {
-    "prepare": "npm run clean && npm run build",
-    "compile": "tsc",
-    "watch": "tsc -w",
-    "clean": "rimraf lib",
-    "copy": "cp src/index.html lib/index.html",
-    "build": "npm run compile && webpack && npm run copy",
-    "start": "node lib/server.js",
-    "start:ext": "node lib/server.js --external"
+    "build:worker": "parcel build ./node_modules/monaco-editor/esm/vs/basic-languages/python/python.js --no-source-maps --log-level 1 --no-minify",
+    "start": "yarn build:worker && parcel ./src/index.html"
+  },
+  "alias": {
+    "vscode": "monaco-languageclient/lib/vscode-compatibility"
   }
 }

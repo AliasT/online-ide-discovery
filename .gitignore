@@ -1,2 +1,4 @@
 node_modules/
 client/lib
+.cache/
+dist

@@ -1,23 +1,23 @@
-/* --------------------------------------------------------------------------------------------
- * Copyright (c) 2018 TypeFox GmbH (http://www.typefox.io). All rights reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- * ------------------------------------------------------------------------------------------ */
-const monaco = require('monaco-editor');
-/* --------------------------------------------------------------------------------------------
- * Copyright (c) 2018 TypeFox GmbH (http://www.typefox.io). All rights reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- * ------------------------------------------------------------------------------------------ */
+
 import { listen, MessageConnection } from 'vscode-ws-jsonrpc';
-const {
-    MonacoLanguageClient, CloseAction, ErrorAction,
-    MonacoServices, createConnection
-} = require('monaco-languageclient');
+import "@babel/polyfill"
+
+const monaco = require('monaco-editor');
 const ReconnectingWebSocket = require('reconnecting-websocket');
-// create Monaco editor
-const editor = monaco.editor.create(document.getElementById('container'), {
+const { MonacoLanguageClient, CloseAction, ErrorAction, MonacoServices, createConnection } = require('monaco-languageclient');
+
+
+const editor = monaco.editor.create(
+    document.getElementById('container'), {
     value: 'print(3)',
     language: 'python'
-  });
+});
+
+(self as any).MonacoEnvironment = {
+    getWorkerUrl: function(moduleId, label) {
+        return './python.js';
+    },
+};
 
 // install Monaco language client services
 MonacoServices.install(editor);
