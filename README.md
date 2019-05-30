@@ -34,9 +34,10 @@
 
 
 ### 难点
-1. 怎么处理多个 python package 的文件夹层次？
+1. 怎么处理多个 python package 的文件夹层次 ？
 2. 采用什么样的 python language server ？
 3. 后端服务器用什么语言开发最快，最容易集成 ？
+4. monaco editor 怎么实现多文件的 lsp 交互 ？
 
 
 
