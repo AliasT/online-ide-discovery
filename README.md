@@ -2,7 +2,7 @@
 
 
 - [x] python language sever : auto complete, go to definition, all references (static analyzie)
-
+- [x] [json rpc](https://zh.wikipedia.org/wiki/JSON-RPC)
 
 
 - [ ] [skulpt](http://www.skulpt.org/) python语法树转换js，支持turtle编程
@@ -11,12 +11,17 @@
 
 - [ ] [xterm](https://github.com/xtermjs/xterm.js/)
 
+### 案例
+- [theia](https://github.com/theia-ide/theia)
+- [repl.it](https://repl.it)
+- [kada](https://kada.163.com)
+- [coding](https://coding.net)
 
 ### issues
 
 1. [skuplt python 3 support](https://github.com/skulpt/skulpt/issues/777)
-
-
+2. [multiple files -> multiple model](https://github.com/Microsoft/monaco-editor/issues/736)
+3. [https://github.com/Microsoft/monaco-editor/issues/604](https://github.com/Microsoft/monaco-editor/issues/604)
 
 ### kada.163.com: python
 
@@ -34,11 +39,18 @@
 
 
 ### 难点
-1. 怎么处理多个 python package 的文件夹层次？
+1. 怎么处理多个 python package 的文件夹层次 ？
 2. 采用什么样的 python language server ？
 3. 后端服务器用什么语言开发最快，最容易集成 ？
+4. monaco editor 怎么实现多文件的 lsp 交互 ？
 
+### milestone
 
+- [x] 单个文件lsp
+- [ ] 多文件lsp
+- [ ] 服务器文件执行
+- [ ] terminal
+- [ ] 用户权限
 
 ### Demo 运行
 
