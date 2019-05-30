@@ -13,6 +13,9 @@
 
 ### 案例
 - [theia](https://github.com/theia-ide/theia)
+- [repl.it](https://repl.it)
+- [kada](https://kada.163.com)
+- [coding](https://coding.net)
 
 ### issues
 
