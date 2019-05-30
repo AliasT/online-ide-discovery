@@ -6,15 +6,21 @@ import * as monaco from 'monaco-editor'
 import { MonacoLanguageClient, CloseAction, ErrorAction, MonacoServices, createConnection }  from 'monaco-languageclient'
 
 const ReconnectingWebSocket = require('reconnecting-websocket');
+
+const model1 = monaco.editor.createModel("from b import c", "python", monaco.Uri.parse("a://a.py"))
+const model2 = monaco.editor.createModel("c = 3", "python", monaco.Uri.parse("a://b.py"))
+
+
 const editor = monaco.editor.create(
     document.getElementById('container'), {
-    value: 'print(3)',
-    language: 'python'
-});
+        model: model1,
+    }
+);
+
 
 (self as any).MonacoEnvironment = {
     getWorkerUrl: function(moduleId, label) {
-        return './python.js';
+        return './editor.worker.js';
     },
 };
 

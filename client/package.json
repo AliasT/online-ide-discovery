@@ -32,7 +32,7 @@
     "webpack-merge": "^4.1.2"
   },
   "scripts": {
-    "build:worker": "parcel build ./node_modules/monaco-editor/esm/vs/basic-languages/python/python.js --no-source-maps --log-level 1 --no-minify",
+    "build:worker": "parcel build ./node_modules/monaco-editor/esm/vs/editor/editor.worker.js --no-source-maps --log-level 1 --no-minify",
     "start": "yarn build:worker && parcel ./src/index.html"
   },
   "alias": {
