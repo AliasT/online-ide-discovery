@@ -10,17 +10,19 @@ const ReconnectingWebSocket = require('reconnecting-websocket');
 const model1 = monaco.editor.createModel("from b import c", "python", monaco.Uri.parse("http://a/a.py"))
 const model2 = monaco.editor.createModel("c = 3", "python", monaco.Uri.parse("http://a/b.py"))
 
+;(self as any).MonacoEnvironment = {
+    getWorkerUrl: function(moduleId, label) {
+        return './editor.worker.js';
+    },
+};
+
 const editor = monaco.editor.create(
     document.getElementById('container'), {
         model: model1,
     }
 );
 
-(self as any).MonacoEnvironment = {
-    getWorkerUrl: function(moduleId, label) {
-        return './editor.worker.js';
-    },
-};
+
 
 // install Monaco language client services
 MonacoServices.install(editor);
