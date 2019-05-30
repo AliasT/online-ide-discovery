@@ -2,7 +2,7 @@
 
 
 - [x] python language sever : auto complete, go to definition, all references (static analyzie)
-
+- [x] [json rpc](https://zh.wikipedia.org/wiki/JSON-RPC)
 
 
 - [ ] [skulpt](http://www.skulpt.org/) python语法树转换js，支持turtle编程
