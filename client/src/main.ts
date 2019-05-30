@@ -2,11 +2,10 @@
 import { listen, MessageConnection } from 'vscode-ws-jsonrpc';
 import "@babel/polyfill"
 
-const monaco = require('monaco-editor');
+import * as monaco from 'monaco-editor'
+import { MonacoLanguageClient, CloseAction, ErrorAction, MonacoServices, createConnection }  from 'monaco-languageclient'
+
 const ReconnectingWebSocket = require('reconnecting-websocket');
-const { MonacoLanguageClient, CloseAction, ErrorAction, MonacoServices, createConnection } = require('monaco-languageclient');
-
-
 const editor = monaco.editor.create(
     document.getElementById('container'), {
     value: 'print(3)',
