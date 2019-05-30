@@ -11,6 +11,8 @@
 
 - [ ] [xterm](https://github.com/xtermjs/xterm.js/)
 
+### 案例
+- [theia](https://github.com/theia-ide/theia)
 
 ### issues
 
