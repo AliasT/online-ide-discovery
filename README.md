@@ -43,14 +43,13 @@
 ### Demo 运行
 
 client
-```shell
+```sh
 cd client
-yarn 
-yarn build
 yarn start
 ```
 server
-```
+```sh
+cd server
 python3 main.py
 ```
 
