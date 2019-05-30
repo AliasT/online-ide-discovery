@@ -1,34 +1,49 @@
+# https://github.com/palantir/python-jsonrpc-server/blob/develop/examples/langserver_ext.py
 import json
 import logging
-from pyls.python_ls import PythonLanguageServer
-from pyls.__main__ import _binary_stdio
-from tornado import web, ioloop, websocket
+import subprocess
+import threading
 
-from pyls_jsonrpc import dispatchers, endpoint
+from tornado import ioloop, process, web, websocket
+
+from pyls_jsonrpc import streams
 
 log = logging.getLogger(__name__)
 
+
 class LanguageServerWebSocketHandler(websocket.WebSocketHandler):
-    """Setup tornado websocket handler to host language server."""
+    """Setup tornado websocket handler to host an external language server."""
 
-    def __init__(self, *args, **kwargs):
-        stdin, stdout = _binary_stdio()
-        # Create an instance of the language server used to dispatch JSON RPC methods
-        langserver = PythonLanguageServer(stdin, stdout)
+    writer = None
 
-        # Setup an endpoint that dispatches to the ls, and writes server->client messages
-        # back to the client websocket
-        self.endpoint = endpoint.Endpoint(langserver, lambda msg: self.write_message(json.dumps(msg)))
+    def open(self, *args, **kwargs):
+        log.info("Spawning pyls subprocess")
 
-        # Give the language server a handle to the endpoint so it can send JSON RPC
-        # notifications and requests.
-        langserver.endpoint = self.endpoint
+        # Create an instance of the language server
+        proc = process.Subprocess(
+            ['pyls', '-v'],
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE
+        )
 
-        super(LanguageServerWebSocketHandler, self).__init__(*args, **kwargs)
+        # Create a writer that formats json messages with the correct LSP headers
+        self.writer = streams.JsonRpcStreamWriter(proc.stdin)
+
+        # Create a reader for consuming stdout of the language server. We need to
+        # consume this in another thread
+        def consume():
+            # Start a tornado IOLoop for reading/writing to the process in this thread
+            ioloop.IOLoop()
+            reader = streams.JsonRpcStreamReader(proc.stdout)
+            reader.listen(lambda msg: self.write_message(json.dumps(msg)))
+
+        thread = threading.Thread(target=consume)
+        thread.daemon = True
+        thread.start()
 
     def on_message(self, message):
         """Forward client->server messages to the endpoint."""
-        self.endpoint.consume(json.loads(message))
+        self.writer.write(json.loads(message))
 
     def check_origin(self, origin):
         return True
