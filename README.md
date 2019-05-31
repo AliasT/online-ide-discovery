@@ -3,7 +3,7 @@
 
 - [x] python language sever : auto complete, go to definition, all references (static analyzie)
 - [x] [json rpc](https://zh.wikipedia.org/wiki/JSON-RPC)
-
+- [ ] [How lsp works](https://microsoft.github.io/language-server-protocol/overview)
 
 - [ ] [skulpt](http://www.skulpt.org/) python语法树转换js，支持turtle编程
 
