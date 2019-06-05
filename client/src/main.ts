@@ -7,8 +7,8 @@ import { MonacoLanguageClient, CloseAction, ErrorAction, MonacoServices, createC
 
 const ReconnectingWebSocket = require('reconnecting-websocket');
 
-const model1 = monaco.editor.createModel("from b import c", "python", monaco.Uri.parse("http://a/a.py"))
-const model2 = monaco.editor.createModel("c = 3", "python", monaco.Uri.parse("http://a/b.py"))
+const model1 = monaco.editor.createModel("from b import c", "python", monaco.Uri.parse("./server/a.py"))
+const model2 = monaco.editor.createModel("c = 3", "python", monaco.Uri.parse("./server/b.py"))
 
 ;(self as any).MonacoEnvironment = {
     getWorkerUrl: function(moduleId, label) {
@@ -22,13 +22,16 @@ const editor = monaco.editor.create(
     }
 );
 
+editor.onDidChangeModel(e => {
+    console.log(e)
+})
 
 
 // install Monaco language client services
 MonacoServices.install(editor);
 
 // create the web socket
-const url = "ws://localhost:3000/python"
+const url = "ws://localhost:4000/python"
 const webSocket = createWebSocket(url);
 // listen when the web socket is opened
 listen({
