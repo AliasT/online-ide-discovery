@@ -7,6 +7,7 @@ import { MonacoLanguageClient, CloseAction, ErrorAction, MonacoServices, createC
 
 const ReconnectingWebSocket = require('reconnecting-websocket');
 
+// 如果要实现多文件的defition跳转，文件必须真实存在，包括已经安装的module都支持
 const model1 = monaco.editor.createModel("from b import c", "python", monaco.Uri.parse("./server/a.py"))
 const model2 = monaco.editor.createModel("c = 3", "python", monaco.Uri.parse("./server/b.py"))
 
