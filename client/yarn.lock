@@ -2313,8 +2313,8 @@ monaco-editor-webpack-plugin@^1.7.0:
 
 monaco-editor@0.14.3:
   version "0.14.3"
-  resolved "https://registry.yarnpkg.com/monaco-editor/-/monaco-editor-0.14.3.tgz#7cc4a4096a3821f52fea9b10489b527ef3034e22"
-  integrity sha512-RhaO4xXmWn/p0WrkEOXe4PoZj6xOcvDYjoAh0e1kGUrQnP1IOpc0m86Ceuaa2CLEMDINqKijBSmqhvBQnsPLHQ==
+  resolved "https://registry.npm.taobao.org/monaco-editor/download/monaco-editor-0.14.3.tgz#7cc4a4096a3821f52fea9b10489b527ef3034e22"
+  integrity sha1-fMSkCWo4IfUv6psQSJtSfvMDTiI=
 
 monaco-languageclient@^0.9.0:
   version "0.9.0"
