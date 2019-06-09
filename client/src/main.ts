@@ -1,15 +1,52 @@
 
 import { listen, MessageConnection } from 'vscode-ws-jsonrpc';
+import {StandaloneCodeEditorServiceImpl}  from 'monaco-editor/esm/vs/editor/standalone/browser/standaloneCodeServiceImpl';
 import "@babel/polyfill"
-
 import * as monaco from 'monaco-editor'
 import { MonacoLanguageClient, CloseAction, ErrorAction, MonacoServices, createConnection }  from 'monaco-languageclient'
 
 const ReconnectingWebSocket = require('reconnecting-websocket');
 
+const openCodeEditor = StandaloneCodeEditorServiceImpl.prototype.openCodeEditor
+
+StandaloneCodeEditorServiceImpl.prototype.findModel = function (editor, resource) {
+    var model = null;
+    if(resource !== null)
+        model = monaco.editor.getModel(resource);
+    if(model == null) {
+        model = editor.getModel()
+    }
+    return model;
+};
+
+StandaloneCodeEditorServiceImpl.prototype.doOpenEditor = function (editor, input) {
+    var model = this.findModel(editor, input.resource);
+    if (!model) { return null; }
+    editor.setModel(model)
+    var selection = (input.options ? input.options.selection : null);
+    if (selection) {
+        if (typeof selection.endLineNumber === 'number' && typeof selection.endColumn === 'number') {
+            editor.setSelection(selection);
+            editor.revealRangeInCenter(selection, 1 /* Immediate */);
+        }
+        else {
+            var pos = {
+                lineNumber: selection.startLineNumber,
+                column: selection.startColumn
+            };
+            editor.setPosition(pos);
+            editor.revealPositionInCenter(pos, 1 /* Immediate */);
+        }
+    }
+    return editor;
+};
+
+
+
+
 // 如果要实现多文件的defition跳转，文件必须真实存在，包括已经安装的module都支持
-const model1 = monaco.editor.createModel("from b import c", "python", monaco.Uri.parse("./server/a.py"))
-const model2 = monaco.editor.createModel("c = 3", "python", monaco.Uri.parse("./server/b.py"))
+const model1 = monaco.editor.createModel("from b import c", "python", monaco.Uri.parse("file:///Users/chai/Documents/online-ide-discovery/server/a.py"))
+const model2 = monaco.editor.createModel("c = 3", "python", monaco.Uri.parse("file:///Users/chai/Documents/online-ide-discovery/server/b.py"))
 
 ;(self as any).MonacoEnvironment = {
     getWorkerUrl: function(moduleId, label) {
@@ -22,10 +59,6 @@ const editor = monaco.editor.create(
         model: model1,
     }
 );
-
-editor.onDidChangeModel(e => {
-    console.log(e)
-})
 
 
 // install Monaco language client services
@@ -78,4 +111,3 @@ function createWebSocket(url: string): WebSocket {
     };
     return new ReconnectingWebSocket(url, undefined, socketOptions);
 }
-
