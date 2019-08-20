@@ -23,7 +23,7 @@
 2. [multiple files -> multiple model](https://github.com/Microsoft/monaco-editor/issues/736)
 3. [https://github.com/Microsoft/monaco-editor/issues/604](https://github.com/Microsoft/monaco-editor/issues/604)
 4. [https://github.com/microsoft/monaco-editor/issues/935](https://github.com/microsoft/monaco-editor/issues/935)
-
+5. [https://github.com/skulpt/skulpt/issues/856](https://github.com/skulpt/skulpt/issues/856)
 ### kada.163.com: python
 
 1. skulpt
