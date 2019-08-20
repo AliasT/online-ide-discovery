@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,39 +8,28 @@
   <script src="./skulpt.js"></script>
   <script src="./skulpt-stdlib.js"></script>
 </head>
+
 <body>
-  <div id="mycanvas"  height="500" width="800"
-style="border-style: solid;"></div>
+  <div id="mycanvas" height="500" width="800" style="border-style: solid;"></div>
 
-<textarea id="code" rows="24" cols="80">
-import turtle
-wn = turtle.Screen()
-
-babbage = turtle.Turtle()
-babbage.shape("triangle")
-
-n = 8
-angle = 360/n
-
-for i in range(n):
-  babbage.right(angle)
-  babbage.forward(90)
-  babbage.stamp()
-
-wn.exitonclick()
+  <textarea id="code" rows="24" cols="80">import Person
+print(Person.name)
 </textarea>
   <script>
-      var prog = document.getElementById("code").value;
-function builtinRead(x) {
-    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
-      throw "File not found: '" + x + "'";
-    return Sk.builtinFiles["files"][x];
-}
-  (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
-  Sk.configure({ read: builtinRead });
-  Sk.misceval.asyncToPromise(function() {
-    return Sk.importMainWithBody("<stdin>",false,prog,true);
-  });
+    var prog = document.getElementById("code").value;
+    // 自定义模块
+    Sk.builtinFiles["files"]["./Person.py"] = 'name="xiaobing"'
+    function builtinRead(x) {
+      if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+        throw "File not found: '" + x + "'";
+      return Sk.builtinFiles["files"][x];
+    }
+    (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
+    Sk.configure({ read: builtinRead });
+    Sk.misceval.asyncToPromise(function () {
+      return Sk.importMainWithBody("<stdin>", false, prog, true);
+    });
   </script>
 </body>
+
 </html>
