@@ -18,8 +18,11 @@ print(Person.name)
   <script>
     var prog = document.getElementById("code").value;
     // 自定义模块
-    Sk.builtinFiles["files"]["./Person.py"] = 'name="xiaobing"'
+    var custom = {
+      "./Person.py": 'name="xiaobing"'
+    }
     function builtinRead(x) {
+      if (custom[x]) return custom[x]
       if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
         throw "File not found: '" + x + "'";
       return Sk.builtinFiles["files"][x];
