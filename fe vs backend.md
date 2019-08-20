@@ -11,7 +11,7 @@
 | 定义跳转                         |                    :x:                     |                        :white_check_mark:                        |
 | 本地模块，pip 等                 |                    :x:                     |                        :white_check_mark:                        |
 | python shell                     |                  应该能实现                  |                        :white_check_mark:                        |
-| 操作系统权限(文件读写等）        |                     :sob                     |                          可控                          |
+| 操作系统权限(文件读写等）        |                     :x:                    |                          可控                          |
 | aka:安全性                       |                   :white_check_mark:                   |                          可控                          |
 | 算法运行时间（互相攀比时有点用） |               每个客户端不一样               |                          一致                          |                    |
 | 调试                             |                    :x:                     |                        实现复杂                        |                    |
