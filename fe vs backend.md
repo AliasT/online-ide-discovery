@@ -1,7 +1,7 @@
 |                                  |                     前端                     |                  后端 （aka 本地环境)                  |      是否必须      |
 | :------------------------------- | :------------------------------------------: | :----------------------------------------------------: | :----------------: |
 | 参考网站                         | [网易咔哒](https://kada.163.com/ide/python/) | [cdr](https://github.com/cdr/code-server) |         -          |
-| 可能的实现方案                   |         [skulpt](http://skulpt.org)          |                        jupyter                         |         -          |
+| 可能的实现方案                   |         [skulpt](http://skulpt.org)          |                        vscode                      |         -          |
 | &#12288;                         |
 | **训练算法的基础库**             |                   :white_check_mark:                   |                        :white_check_mark:                        | :heavy_check_mark: |
 | **多文件支持**                   |                   :white_check_mark:                   |                        :white_check_mark:                        | :heavy_check_mark: |
