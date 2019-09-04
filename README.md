@@ -52,6 +52,7 @@
 - [ ] 服务器文件执行
 - [ ] terminal
 - [ ] 用户权限
+- [ ] [图片支持](https://github.com/skulpt/skulpt/issues/790)
 
 ### Demo 运行
 
